@@ -31,12 +31,15 @@ body{
 }
 
 .link{
-    color:black;
+    color: #e3f8ff;
     text-decoration: none;
+    padding: 10px;
+    padding-left: 10px;
 }
 
 .link:hover{
     text-decoration:none;
+    color: #89b6e7;
 }
 
 .dec-hov:hover{
@@ -55,6 +58,20 @@ body{
 
 .title{
     font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: xx-large;
+    color: aliceblue;
+}
+
+.nav-title{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: x-large;
+    color: aliceblue;
+    margin: 5px;
+    margin-left: 10px;
+}
+
+.title-card{
+    font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: x-large;
     color: aliceblue;
 }
@@ -79,5 +96,61 @@ body{
 
 .shadow{
     box-shadow: 0px 4px 6px 4px rgb(31, 38, 41);
+    background-color: #34434f;
 }
 
+.botonC{
+    background-color: #41963a;
+    text-decoration: none;
+    border: none;
+    border-radius: 0.4rem;
+    box-shadow: -1px 1px 8px rgba(0, 0, 0, 0.4);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: aliceblue;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-right: 10px;
+    margin-left: 25px;
+    
+}
+.botonC:hover{
+    background-color: #327c2b;
+}
+
+.botonA{
+    background-color: transparent;
+    text-decoration: none;
+    border: none;
+    border-radius: 0.4rem;
+    box-shadow: -1px 1px 8px rgba(0, 0, 0, 0.4);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: aliceblue;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 10px;
+}
+.botonA:hover{
+    background-color: #42505c;
+}
+
+.bienvenida{
+    background-color: #33344a;
+    padding: 50px;
+}
+
+.somos{
+    background-color: #32444d;
+    padding: 50px;
+}
+
+.productos{
+    background-color: #182837;
+    padding: 50px;
+}
+
+.card_2{
+    max-width: 400px;
+    margin: 0 auto;
+}

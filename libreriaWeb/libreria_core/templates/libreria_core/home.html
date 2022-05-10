@@ -14,36 +14,69 @@
     
     <div>
         <!--Presentación-->
-        <div class="div-center top-div bottom-div">
-            <p class="text-center title">Bienvenido a Library Store</p>
-            <p class="text-center text-by">Aca encontraras un sin fin de libros, desde fantasía hasta ciencias, tenemos una amplia categoria de libros</p>
-        </div>
+        <div class="div-center bienvenida">
+            <p class="text-center title" id="porno">Bienvenido a Library Store</p>
+            <div class="row">
+              <div class="col-sm">
+              </div>
+              <div class="col">
+                <p class="text-center text-by">Con nosotros no solo encontraras nuevos libros que te interesen, tambien contamos con una gran variedad, entre ellas mangas y comics, con variedad de generos</p>
+              </div>
+              <div class="col-sm">
+              </div>
+            </div>
+          </div>
         <!--Quienes somos-->
-        <div class="div-center bottom-div">
+        <div class="div-center somos">
           <p class="text-center title">¿Quienes somos?</p>
-          <p class="text-center text-by">Somos una cadena de tiendas de libros, dedicados a traer todo tipo de libros</p>
+          <div class="row">
+            <di class="col-sm"></di>
+            <di class="col">
+              <p class="text-center text-by">Somos una libreria dedicada a traer todo tipo de lectura, desde la menos a la más popular, para que nuestros lectores disfruten de una gran variedad</p>
+            </di>
+            <di class="col-sm"></di>
+          </div>
         </div>
-
+        <div class="div-center bottom-div productos">
+          <p class="text-center title">Nuestros Productos</p>
+        </div>
 
     </div>
 
-    <h3 class="text-center title">libros recientes</h3>
 
-    <div class="shadow-none p-3"></div>
+    <div class="text-center" id="cargador">
+      <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
 
     <div class="bottom-div">
       <div class="card-columns div-center-card" id="contenedor">
-        <div class="card shadow">
-          <img src="" class="card-img-top max-tam-img" alt="...">
-          <div class="card-body">
-            <h5 class="card-title text-center"></h5>
-            <p class="card-text"></p>
+    </div>
+    </div>
+
+    <div class="container pad">
+      <div class="row">
+        <div class="col-sm">
+        </div>
+        <div class="col-m">
+          <div class="p-3 bck-w border-r">
+              <h2 class="text-center title">AGREGAR LIBRO</h2>
+              <form method="POST" action="" enctype="multipart/form-data" id="formulario-agregar">
+              {% csrf_token %}
+              <div class="form-group">
+                  {{ form.codigo. }}
+              </div>
+              <input type="submit" class="btn btn-success" id="enviar" value="Agregar">
+              <input type="reset" class="btn btn-secondary" id="limpiar" value="Limpiar">
+              
+          </form>
           </div>
         </div>
+        <div class="col-sm">
+        </div>
+      </div>
     </div>
-    </div>
-
-
 
 </body>
 </html>
@@ -53,6 +86,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="{% static 'libreria_core/js/libros.js' %}"></script>
+<script src="{% static '/libreria_core/js/probando.js' %}"></script>
 
 {% endblock %}

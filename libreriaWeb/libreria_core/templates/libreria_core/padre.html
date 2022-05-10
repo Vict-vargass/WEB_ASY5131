@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,27 +14,24 @@
 <header>
     <nav class="navbar navbar-expand-lg navbar-light bck-color">
         <img src="{% static 'libreria_core/img/logo/libreria.png'%}" alt="logoGroundZero" class="tam-log">
-          <h3 class="user-select-none"><i>Library</i></h3>
+          <h3 class="user-select-none nav-title"><i>Library</i></h3>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="{% url 'inicio' %}">Inicio</a>
+              <li class="nav-item div-center">
+                <a class="link" href="{% url 'inicio' %}">Inicio</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'ingresar_libro' %}">Ingresar libros</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="" target="_blank">Carrito</a>
+              <li class="nav-item div-center">
+                <a class="link" href="{% url 'carrito' %}">Carrito</a>
               </li>
             </ul>
             <ul class="nav justify-content-end">
-              <li class="nav-item">
+              <li class="nav-item div-center">
                 <a class="nav-link disabled" href="#">Inicio sesión</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item div-center">
                 <a class="nav-link disabled" href="#">Registro</a>
               </li>
             </ul>

@@ -1,10 +1,10 @@
 from django.urls import path
-from .views import home, ingresarLibros
+from .views import home, carrito
 #Urls que tendra libreria#
 
 urlpatterns = [
     path ('', home, name= "inicio"),
-    path ('ingresarLibro', ingresarLibros, name="ingresar_libro"),
+    path ('carrito', carrito, name="carrito"),
 
 ] 
 
