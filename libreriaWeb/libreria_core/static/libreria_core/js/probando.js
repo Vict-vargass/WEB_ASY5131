@@ -1,12 +1,7 @@
 $(document).ready(function(){
 
-var base_de_datos = []
 var contenedor = $('#contenedor')
 var cargador = $('#cargador')
-var carrito = [];
-var localStorage = window.localStorage;
-const divisa = '$'
-var numeroItem = 0;
 $.get({
     url: 'https://gaff8f4466ad45b-library01db.adb.sa-santiago-1.oraclecloudapps.com/ords/admin/libro/',
 
@@ -27,15 +22,6 @@ $.get({
             "</div>"+
             "</div>"+
             "</div></div>");
-            base_de_datos.push(libro)
-            $('#'+libro.codigo).click(
-                function(){
-                    carrito.push(libro.codigo);
-                    guardar();
-                    renderCarro();
-                }
-            )
-
         });
 
     }
@@ -43,30 +29,6 @@ $.get({
 
 });
 
-function guardar (){
-    localStorage.setItem('carrito', JSON.stringify(carrito));   
-};
-
-function renderCarro(){
-    console.log("AREA RENDER CARRO");
-    const carritoSinDuplicados = [...new Set(carrito)];
-    
-    carritoSinDuplicados.forEach((item)=>{
-        const miItem = base_de_datos.filter((itemBD)=>{
-            return itemBD.codigo == item
-        });
-        const numeroUnidadesItem = carrito.reduce((total, itemId)=>{
-            return itemId === item ? total +=1 : total;
-        }, 0);
-        numeroItem = numeroUnidadesItem;
-
-    });
-
-    console.log("CARRO SIN DUPLICADOS: ",carritoSinDuplicados);
-    console.log("Numero item: ", numeroItem);
-    console.log("CARRO ORIGINAL: ", carrito);
-
-};
 
 
 

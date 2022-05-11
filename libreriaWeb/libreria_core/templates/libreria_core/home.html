@@ -50,27 +50,94 @@
       </div>
     </div>
 
-    <div class="bottom-div">
-      <div class="card-columns div-center-card" id="contenedor">
-    </div>
-    </div>
-
-    <div class="container pad">
+    <div class="container bottom-div">
       <div class="row">
-        <div class="col-sm">
-        </div>
+        <!--PRIMER FORM CARD-->
         <div class="col-m">
           <div class="p-3 bck-w border-r">
-              <h2 class="text-center title">AGREGAR LIBRO</h2>
-              <form method="POST" action="" enctype="multipart/form-data" id="formulario-agregar">
-              {% csrf_token %}
-              <div class="form-group">
-                  {{ form.codigo. }}
+            <div class="card dec-hov card_2 shadow" style="width: 18rem;">
+              <img src="{{data.items.0.portada}}" class="card-img-top" alt="">
+              <div class="card-body">
+                <h5 class="card-title text-center title-card">{{data.items.0.nombre}}</h5>
+                <p class="card-text text-center text-by">Precio: {{data.items.0.precio}}</p>
+                <div class='d-flex justify-content-center text-center'>
+                  <form method="POST" action="" enctype="multipart/form-data" id="formulario-agregar">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        {{form1}}
+                    </div>
+                    <input type="submit" class="botonA" id="enviar" value="Comprar">
+                </form>
+                </div>
               </div>
-              <input type="submit" class="btn btn-success" id="enviar" value="Agregar">
-              <input type="reset" class="btn btn-secondary" id="limpiar" value="Limpiar">
-              
-          </form>
+            </div>
+          </div>
+        </div>
+        <!--SEGUNDO FORM CARD-->
+        <div class="col-m">
+          <div class="p-3 bck-w border-r">
+            <div class="card dec-hov card_2 shadow" style="width: 18rem;">
+              <img src="{{data.items.1.portada}}" class="card-img-top max-tam-img" alt="">
+              <div class="card-body">
+                <h5 class="card-title text-center title-card">{{data.items.1.nombre}}</h5>
+                <p class="card-text text-center text-by">Precio: {{data.items.1.precio}}</p>
+                <div class='d-flex justify-content-center text-center'>
+                <form method="POST" action="" enctype="multipart/form-data" id="formulario-agregar">
+                  {% csrf_token %}
+                  <div class="form-group">
+                      {{form2}}
+                  </div>
+                  <input type="submit" class="botonA" id="enviar" value="Comprar">
+              </form>
+            </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--TERCER FORM CARD-->
+        <div class="col-m">
+          <div class="p-3 bck-w border-r">
+            <div class="card dec-hov card_2 shadow" style="width: 18rem;">
+              <img src="{{data.items.2.portada}}" class="card-img-top max-tam-img" alt="">
+              <div class="card-body">
+                <h5 class="card-title text-center title-card">{{data.items.2.nombre}}</h5>
+                <p class="card-text text-center text-by">Precio: {{data.items.2.precio}}</p>
+                <div class='d-flex justify-content-center text-center'>
+                <form method="POST" action="" enctype="multipart/form-data" id="formulario-agregar">
+                  {% csrf_token %}
+                  <div class="form-group">
+                      {{form3}}
+                  </div>
+                  <input type="submit" class="botonA" id="enviar" value="Comprar">
+              </form>
+            </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--SEGUNDA ROW-->
+      <div class="row">
+        <div class="col-sm"></div>
+        <!--CUARTO FORM CARD-->
+        <div class="col-m">
+          <div class="p-3 bck-w border-r">
+            <div class="card dec-hov card_2 shadow" style="width: 18rem;">
+              <img src="{{data.items.3.portada}}" class="card-img-top max-tam-img" alt="">
+              <div class="card-body">
+                <h5 class="card-title text-center title-card">{{data.items.3.nombre}}</h5>
+                <p class="card-text text-center text-by">Precio: {{data.items.3.precio}}</p>
+                <div class='d-flex justify-content-center text-center'>
+                <form method="POST" action="" enctype="multipart/form-data" id="formulario-agregar">
+                  {% csrf_token %}
+                  <div class="form-group">
+                      {{form4}}
+                  </div>
+                  <input type="submit" class="botonA" id="enviar" value="Comprar">
+              </form>
+            </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="col-sm">
