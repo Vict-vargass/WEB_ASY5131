@@ -1,12 +1,6 @@
-from dataclasses import field
-from distutils.log import error
-from html.entities import codepoint2name
-from pickle import TRUE
-import string
 from django.shortcuts import render
 from libreria_core.models import Libro
 from libreria_core.forms import registrarLibro 
-import urllib, json
 # Create your views here.
 # Aca se crean las vistas y se le da nombre a la url, 
 # se implementan las acciones en general
@@ -14,9 +8,8 @@ import urllib, json
 
 def home(request):
 
-    url = "https://gaff8f4466ad45b-library01db.adb.sa-santiago-1.oraclecloudapps.com/ords/admin/libro/"
-    response = urllib.request.urlopen(url)
-    data = json.loads(response.read())
+    libros = Libro.objects.all()
+    
     cod1 = 'MDD021'
     cod2 = 'AFK204'
     cod3 = 'CAS211'
@@ -28,12 +21,11 @@ def home(request):
     
 
     datos = {
-        'data' : data,
         'form1' : form1,
         'form2' : form2,
         'form3' : form3,
         'form4' : form4,
-
+        'libros': libros
     }
 
     if request.method=='POST':
@@ -52,5 +44,4 @@ def carrito(request):
         'carro' : carro
     }
 
-    
     return render (request, 'libreria_core/carrito.html', datos)

@@ -50,9 +50,9 @@
       </div>
     </div>
 
-    <div class="container bottom-div">
+    <!--    <div class="container bottom-div"> 
       <div class="row">
-        <!--PRIMER FORM CARD-->
+        <PRIMER FORM CARD->
         <div class="col-m">
           <div class="p-3 bck-w border-r">
             <div class="card dec-hov card_2 shadow" style="width: 18rem;">
@@ -73,7 +73,7 @@
             </div>
           </div>
         </div>
-        <!--SEGUNDO FORM CARD-->
+        <--SEGUNDO FORM CARD->
         <div class="col-m">
           <div class="p-3 bck-w border-r">
             <div class="card dec-hov card_2 shadow" style="width: 18rem;">
@@ -94,7 +94,7 @@
             </div>
           </div>
         </div>
-        <!--TERCER FORM CARD-->
+        <--TERCER FORM CARD->
         <div class="col-m">
           <div class="p-3 bck-w border-r">
             <div class="card dec-hov card_2 shadow" style="width: 18rem;">
@@ -116,10 +116,10 @@
           </div>
         </div>
       </div>
-      <!--SEGUNDA ROW-->
+      <--SEGUNDA ROW->
       <div class="row">
         <div class="col-sm"></div>
-        <!--CUARTO FORM CARD-->
+        <--CUARTO FORM CARD->
         <div class="col-m">
           <div class="p-3 bck-w border-r">
             <div class="card dec-hov card_2 shadow" style="width: 18rem;">
@@ -142,6 +142,25 @@
         </div>
         <div class="col-sm">
         </div>
+      </div>
+    </div> -->
+
+
+    <div class="container">
+      <div class="dsp-card">
+        {% for lib in libro %}
+          <div class="dsp-card">
+            <div class="card">
+              <img src="{{lib.portada}}" class="card-img-top" alt="">
+              <div class="card-body">
+                <h4 class="center">{{lib.nombre}}</h4>
+                <div class="card-body">
+                  <p class="center">{{lib.precia}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
       </div>
     </div>
 
