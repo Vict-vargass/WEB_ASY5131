@@ -1,16 +1,15 @@
 from django import forms
-from .models import Libro
+from .models import Carrito, Libro
 
 
 class registrarLibro(forms.ModelForm):
 
     class Meta:
-        model = Libro
-        fields = ['codigo','portada','nombre','stock','precio']
+        model = Carrito
+        fields = ['codigo','nombre','cantidad','precio']
         widgets={
             'codigo': forms.HiddenInput(),
-            'portada': forms.HiddenInput(),
             'nombre' : forms.HiddenInput(),
-            'stock' : forms.HiddenInput(),
+            'cantidad' : forms.HiddenInput(),
             'precio': forms.HiddenInput(),
         }

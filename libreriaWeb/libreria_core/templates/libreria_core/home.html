@@ -53,6 +53,15 @@
             Stock: {{lib.stock}}</p>
         <div>
         <div class="d-flex justify-content-center text-center">
+          <form method="POST" action="" id="formulario-editar">
+            {% csrf_token %}
+              <input type="hidden" name="codigo" id="id_codigo" value="{{lib.codigo}}">
+              <input type="hidden" name="nombre" id="id_nombre" value="{{lib.nombre}}">
+              <input type="number" required name="cantidad" id="id_cantidad" , placeholder="Libros a agregar">
+              <input type="hidden" name="precio" id="id_precio" value="{{lib.precio}}">
+            <input type="submit" class="btn btn-success" id="enviar" value="Agregar">
+          </form>
+
         </div>
         </div>
     </div></div>

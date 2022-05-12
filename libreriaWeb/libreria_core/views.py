@@ -9,23 +9,10 @@ from libreria_core.forms import registrarLibro
 def home(request):
 
     libros = Libro.objects.all()
-    
-    cod1 = 'MDD021'
-    cod2 = 'AFK204'
-    cod3 = 'CAS211'
-    cod4 = 'DLY402'
-    form1 = registrarLibro(initial={'codigo': cod1,'nombre':'American Psycho','cantidad': '1','precio':'18000'})
-    form2 = registrarLibro(initial={'codigo': cod2,'nombre':'Dune','cantidad':'1', 'precio':'5000'})
-    form3 = registrarLibro(initial={'codigo':cod3,'nombre':'Jujutsu Kaisen 1','cantidad':'1','precio':'10000'})
-    form4 = registrarLibro(initial={'codigo':cod4,'nombre':'Jujutsu Kaisen 0','cantidad':'1','precio':'14500'})
-    
-
+    formu = registrarLibro()
     datos = {
-        'form1' : form1,
-        'form2' : form2,
-        'form3' : form3,
-        'form4' : form4,
-        'libros': libros
+        'libros': libros,
+        'form': formu
     }
 
     if request.method=='POST':
