@@ -4,6 +4,6 @@ from rest_api.viewsLogin import login
 
 urlpatterns = [
     path('libros', libros, name='libros'),
-    path('libro', libro, name='libro'),
+    path('libro/<pk>', libro, name='libro'),
     path('login', login, name='login'),
 ]
