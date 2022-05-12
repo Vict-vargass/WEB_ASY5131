@@ -10,7 +10,7 @@ from rest_framework.permissions import IsAuthenticated
 # agregar el decorador sobre los def
 @permission_classes((IsAuthenticated,))
 @api_view(['GET', 'POST'])
-def libros_comprados_api (request):
+def libros (request):
     if request.method=='GET':
         lista_libro = Libro.objects.all()
         serializer = LibroSerializer(lista_libro, many=True)
@@ -27,7 +27,7 @@ def libros_comprados_api (request):
 
 @permission_classes((IsAuthenticated,))
 @api_view(['GET', 'PUT', 'DELETE'])
-def libro_comprado_api(request, pk):
+def libro(request, pk):
     try:
         libro = Libro.objects.get(codigo=pk)
     except Libro.DoesNotExist:

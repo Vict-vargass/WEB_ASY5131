@@ -42,127 +42,23 @@
         </div>
 
     </div>
-
-
-    <div class="text-center" id="cargador">
-      <div class="spinner-border" role="status">
-        <span class="sr-only">Loading...</span>
-      </div>
-    </div>
-
-    <!--    <div class="container bottom-div"> 
-      <div class="row">
-        <PRIMER FORM CARD->
-        <div class="col-m">
-          <div class="p-3 bck-w border-r">
-            <div class="card dec-hov card_2 shadow" style="width: 18rem;">
-              <img src="{{data.items.0.portada}}" class="card-img-top" alt="">
-              <div class="card-body">
-                <h5 class="card-title text-center title-card">{{data.items.0.nombre}}</h5>
-                <p class="card-text text-center text-by">Precio: {{data.items.0.precio}}</p>
-                <div class='d-flex justify-content-center text-center'>
-                  <form method="POST" action="" enctype="multipart/form-data" id="formulario-agregar">
-                    {% csrf_token %}
-                    <div class="form-group">
-                        {{form1}}
-                    </div>
-                    <input type="submit" class="botonA" id="enviar" value="Comprar">
-                </form>
-                </div>
-              </div>
-            </div>
-          </div>
+    
+    <div class="container bottom-div">
+        {% for lib in libros %}    
+        <div class="card dec-hov card_2 shadow">
+          <img src="{{lib.portada}}" class="card-img-top max-tam-img" alt="">
+        <div class="card-body shadow">
+          <h5 class="card-title text-center title-card">{{lib.nombre}}</h5>
+          <p class="card-text text-center text-by">Precio:{{lib.precio}}<br>
+            Stock: {{lib.stock}}</p>
+        <div>
+        <div class="d-flex justify-content-center text-center">
         </div>
-        <--SEGUNDO FORM CARD->
-        <div class="col-m">
-          <div class="p-3 bck-w border-r">
-            <div class="card dec-hov card_2 shadow" style="width: 18rem;">
-              <img src="{{data.items.1.portada}}" class="card-img-top max-tam-img" alt="">
-              <div class="card-body">
-                <h5 class="card-title text-center title-card">{{data.items.1.nombre}}</h5>
-                <p class="card-text text-center text-by">Precio: {{data.items.1.precio}}</p>
-                <div class='d-flex justify-content-center text-center'>
-                <form method="POST" action="" enctype="multipart/form-data" id="formulario-agregar">
-                  {% csrf_token %}
-                  <div class="form-group">
-                      {{form2}}
-                  </div>
-                  <input type="submit" class="botonA" id="enviar" value="Comprar">
-              </form>
-            </div>
-              </div>
-            </div>
-          </div>
         </div>
-        <--TERCER FORM CARD->
-        <div class="col-m">
-          <div class="p-3 bck-w border-r">
-            <div class="card dec-hov card_2 shadow" style="width: 18rem;">
-              <img src="{{data.items.2.portada}}" class="card-img-top max-tam-img" alt="">
-              <div class="card-body">
-                <h5 class="card-title text-center title-card">{{data.items.2.nombre}}</h5>
-                <p class="card-text text-center text-by">Precio: {{data.items.2.precio}}</p>
-                <div class='d-flex justify-content-center text-center'>
-                <form method="POST" action="" enctype="multipart/form-data" id="formulario-agregar">
-                  {% csrf_token %}
-                  <div class="form-group">
-                      {{form3}}
-                  </div>
-                  <input type="submit" class="botonA" id="enviar" value="Comprar">
-              </form>
-            </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <--SEGUNDA ROW->
-      <div class="row">
-        <div class="col-sm"></div>
-        <--CUARTO FORM CARD->
-        <div class="col-m">
-          <div class="p-3 bck-w border-r">
-            <div class="card dec-hov card_2 shadow" style="width: 18rem;">
-              <img src="{{data.items.3.portada}}" class="card-img-top max-tam-img" alt="">
-              <div class="card-body">
-                <h5 class="card-title text-center title-card">{{data.items.3.nombre}}</h5>
-                <p class="card-text text-center text-by">Precio: {{data.items.3.precio}}</p>
-                <div class='d-flex justify-content-center text-center'>
-                <form method="POST" action="" enctype="multipart/form-data" id="formulario-agregar">
-                  {% csrf_token %}
-                  <div class="form-group">
-                      {{form4}}
-                  </div>
-                  <input type="submit" class="botonA" id="enviar" value="Comprar">
-              </form>
-            </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm">
-        </div>
-      </div>
-    </div> -->
-
-
-    <div class="container">
-      <div class="dsp-card">
-        {% for lib in libro %}
-          <div class="dsp-card">
-            <div class="card">
-              <img src="{{lib.portada}}" class="card-img-top" alt="">
-              <div class="card-body">
-                <h4 class="center">{{lib.nombre}}</h4>
-                <div class="card-body">
-                  <p class="center">{{lib.precia}}</p>
-                </div>
-              </div>
-            </div>
-          </div>
+    </div></div>
         {% endfor %}
-      </div>
     </div>
+
 
 </body>
 </html>
@@ -172,6 +68,5 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="{% static '/libreria_core/js/probando.js' %}"></script>
 
 {% endblock %}
