@@ -6,7 +6,7 @@ class registrarLibro(forms.ModelForm):
 
     class Meta:
         model = Carrito
-        fields = ['codigo','nombre','cantidad','precio']
+        fields = ['codigoLibro','nombre','cantidad','precio']
         widgets={
             'codigo': forms.HiddenInput(),
             'nombre' : forms.HiddenInput(),

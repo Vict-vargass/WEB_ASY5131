@@ -19,5 +19,6 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('libreria_core.urls')),  #Redireccionado a las urls dentro de libreria_core
-    path('api/', include('rest_api.urls')),
+    path('libro-api/', include('rest_api.urls')),
+    path('carro-api/', include('carro_api.urls'))
 ]

@@ -1,4 +1,4 @@
-from rest_api.serializers import LibroSerializer
+from rest_api.serializers import LibroSerializer, UpdateStockSerializer
 from libreria_core.models import Libro
 from rest_framework.response import Response
 from rest_framework.parsers import JSONParser
@@ -39,7 +39,7 @@ def libro(request, pk):
     
     elif request.method == 'PUT':
         data = JSONParser().parse(request)
-        serializer = LibroSerializer(libro, data=data)
+        serializer = UpdateStockSerializer(libro, data=data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
