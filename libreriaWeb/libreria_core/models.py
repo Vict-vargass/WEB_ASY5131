@@ -14,10 +14,7 @@ class Libro (models.Model):
 
 class Carrito (models.Model):
     codigoCarrito = models.CharField(max_length=3,primary_key=True, verbose_name="codigo del carro", null=False)
-    codigoLibro = models.CharField(max_length=8, verbose_name="codigo del libro", null=True)
-    nombre = models.CharField(max_length=100, verbose_name="nombre libro")
+    codigoLibro = models.ManyToManyField( Libro, verbose_name="codigo del libro")
     cantidad = models.IntegerField(verbose_name="cantidad de libros", null=True)
-    precio= models.IntegerField(verbose_name="precio unitario")
-    url = models.CharField(max_length=100, verbose_name="url del libro", null=True)
     def __str__(self):
         return str(self.codigoCarrito)

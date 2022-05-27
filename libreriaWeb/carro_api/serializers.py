@@ -4,7 +4,7 @@ from libreria_core.models import Carrito
 class CarroSerializer(serializers.ModelSerializer):
     class Meta:
         model= Carrito
-        fields = ['codigoCarrito', 'codigoLibro','nombre','cantidad','precio', 'url']
+        fields = ['codigoCarrito','codigoLibro','cantidad']
 
 
 
