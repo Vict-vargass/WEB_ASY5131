@@ -1,7 +1,8 @@
 from django.urls import path
-from carro_api.views import carrito, libro_carro
+from carro_api.views import carritos, carro, detalles
 
 urlpatterns = [
-    path('carrito', carrito, name='carrito'),
-    path('libro-carro/<pk>', libro_carro, name='libro-carro')
+    path('carrito', carritos, name='carrito'),
+    path('libro-carro/<pk>', carro, name='libro-carro'),
+    path('detalles', detalles, name="detalles")
 ]

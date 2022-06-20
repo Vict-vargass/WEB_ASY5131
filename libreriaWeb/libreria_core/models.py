@@ -5,7 +5,7 @@ class Libro (models.Model):
     portada = models.CharField(max_length=10000, verbose_name="Portada libro", null=True)
     nombre = models.CharField(max_length=100, verbose_name="nombre libro")
     stock = models.IntegerField(verbose_name="stock libro", null=True)
-    precio= models.CharField(max_length=1000000,verbose_name="precio libro")
+    precio= models.IntegerField(verbose_name="precio libro")
     def __str__(self):
         return self.codigo
 
@@ -14,7 +14,12 @@ class Libro (models.Model):
 
 class Carrito (models.Model):
     codigoCarrito = models.CharField(max_length=3,primary_key=True, verbose_name="codigo del carro", null=False)
-    codigoLibro = models.ManyToManyField( Libro, verbose_name="codigo del libro")
-    cantidad = models.IntegerField(verbose_name="cantidad de libros", null=True)
+    fecha = models.DateField(verbose_name="fecha", null=True)
     def __str__(self):
         return str(self.codigoCarrito)
+
+
+class Detail (models.Model):
+    codigoCarro = models.ForeignKey(Carrito, verbose_name="Codigo del Carro", on_delete=models.CASCADE)
+    codigoLibro = models.ForeignKey(Libro, verbose_name="Codigo del Libro", on_delete=models.CASCADE)
+    cantidad = models.IntegerField(verbose_name="Cantidad del libro")
