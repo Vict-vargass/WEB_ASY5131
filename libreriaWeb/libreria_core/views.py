@@ -12,10 +12,7 @@ def home(request):
         'libros': libros,
     }
 
-
-            
-        
-    return render(request, 'libreria_core/home.html', datos)
+    return render(request, 'libreria_core/inicio.html', datos)
 
 
 def carrito(request):

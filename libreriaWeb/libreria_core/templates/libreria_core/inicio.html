@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'libreria_core/css/style.css' %}">
+  {% block link %}{%endblock%}
+  <title>{%block title %} {%endblock%}</title>
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bck-color">
+        <img src="{% static 'libreria_core/img/logo/libreria.png'%}" alt="logoGroundZero" class="tam-log">
+          <h3 class="user-select-none nav-title"><i>Caso libreria</i></h3>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item div-center">
+                <a class="link" href="{% url 'libros' %}">Libros</a>
+              </li>
+              <li class="nav-item div-center">
+                <a class="link" href="{% url 'carrito' %}">Carrito</a>
+              </li>
+              <li class="nav-item div-center">
+                <a class="link" href="{% url 'detalles' %}">Detalles</a>
+              </li>
+              <li class="nav-item div-center">
+                <a class="link" href="http://127.0.0.1:8000/admin">Admin</a>
+              </li>
+            </ul>
+          </div>
+    </nav>
+</header>
+<div class="h-100 d-inline-block w-100 p-3 bck-color-2">
+    <div class="row">
+        <div class="col-12">
+            <div class="tex-center text-by">
+                © 2022 Integrantes | Cristian Poblete - Victor Vargas 
+            </div>
+        </div>
+    </div>
+</div> 
+</body>
+</html>
