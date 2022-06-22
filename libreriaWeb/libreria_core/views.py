@@ -13,13 +13,3 @@ def home(request):
     }
 
     return render(request, 'libreria_core/inicio.html', datos)
-
-
-def carrito(request):
-    
-    carro = Libro.objects.all()
-    datos = {
-        'carro' : carro
-    }
-
-    return render (request, 'libreria_core/carrito.html', datos)
